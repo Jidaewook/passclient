@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Router from './Router';
+import Globalstyles from './GlobalStyles';
 
 
 class App extends Component {
@@ -8,8 +9,8 @@ class App extends Component {
       <>
         
         <Router />
-
-      </>      
+        <Globalstyles />
+      </>  
     );
   }
 }

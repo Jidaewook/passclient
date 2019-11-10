@@ -1,7 +1,7 @@
 import {createGlobalStyle} from "styled-components";
 import reset from "styled-reset";
 
-const golbalStyles = createGlobalStyle`
+const globalStyles = createGlobalStyle`
     ${reset};
     
     ${'' /* 아래의 a는 SLink안의 링크적인 속성을 가리킨다. */}
