@@ -21,7 +21,7 @@ export default () => (
             <Header />
             <Switch>
                 <Route path="/" exact component={Notice} />
-                <Route path="/workbook" exact component={Workbook} />
+                <Route path="/bbswork" exact component={Workbook} />
                 <Route path="/lecture" exact component={Lecture} />
                 <Route path="/study" exact component={Study}/>
                 <Route path="/consultant" exact component={Consultant}/>

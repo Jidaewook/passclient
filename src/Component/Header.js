@@ -46,8 +46,8 @@ export default withRouter(({location: {pathname}}) => (
             <Item current={pathname === "/"}>
                 <SLink to="/">공지사항</SLink>
             </Item>
-            <Item current={pathname === "/workbook"}>
-                <SLink to="/workbook">학습지게시판</SLink>
+            <Item current={pathname === "/bbswork"}>
+                <SLink to="/bbswork">학습지게시판</SLink>
             </Item>
             <Item current={pathname === "/lecture"}>
                 <SLink to="/lecture">강좌게시판</SLink>
