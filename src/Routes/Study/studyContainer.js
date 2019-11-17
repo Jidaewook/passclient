@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
+import StudyPresenter from './studyPresenter';
 
 class Study extends Component {
     state = {
         isLoading: true,
-        bbsStudy: []
+        bbsStudy: null,
+        error: null
     };
 
     componentDidMount(){
@@ -23,11 +25,14 @@ class Study extends Component {
     };
 
     render() {
-        const {isLoading, bbsStudy} = this.state;
+        const {isLoading, bbsStudy, error} = this.state;
         return(
-            <div>
-                <b1>bbsStudy Complete</b1>
-            </div>
+            <StudyPresenter 
+                studyData={bbsStudy}
+                loading={isLoading}
+                error={error}
+
+            />  
         );
     };
 };
