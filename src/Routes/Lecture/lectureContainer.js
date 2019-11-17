@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import LecturePresenter from './lecturePresenter';
-
+import {LecApi} from "../../api";
 
 class Lecture extends Component {
     state = {
@@ -10,18 +10,26 @@ class Lecture extends Component {
 
     };
 
-    componentDidMount() {
-        return fetch("http://localhost:5000/bbslec/")
-            .then((response) => response.json())
-            .then((responseJson) => {
-                responseJson.map(lecdata => {
-                    console.log(lecdata.title);
-                })
+    async componentDidMount() {
+        try {
+            const {
+                data: {results: bbsLecture}
+            } = await LecApi.lecTotalGet();
+            this.setState({bbsLecture});
+                
+        } catch {
+            this.setState({
+                error: "Can't find Lecture Data Information"
             });
+ 
+        } finally { 
+            this.setState({isLoading: false});
+        }
     }
     
     render() {
         const {isLoading, bbsLecture, error} = this.state;
+        console.log(error);
         return(
             <LecturePresenter 
                 loading={isLoading}
