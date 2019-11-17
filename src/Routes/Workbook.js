@@ -8,7 +8,7 @@ class Workbook extends Component {
 
     state = {
         isLoading: true,
-        bbsinfo: []
+        bbsWork: []
     };
 
     getbbswork = async () => {
@@ -31,7 +31,7 @@ class Workbook extends Component {
 
 
     render(){
-        const {isLoading, bbsinfo} = this.state;
+        const {isLoading, bbsWork} = this.state;
         return(
             <div>
                 <b1>return</b1>
