@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import LecturePresenter from './lecturePresenter';
+
 
 class Lecture extends Component {
     state = {
         isLoading: true,
-        bbsLecture: []
+        bbsLecture: null,
+        error: null
 
     };
 
@@ -18,11 +21,14 @@ class Lecture extends Component {
     }
     
     render() {
-        const {isLoading, bbsLecture} = this.state;
+        const {isLoading, bbsLecture, error} = this.state;
         return(
-            <div>
-                <b1>Lecture Complete</b1>
-            </div>
+            <LecturePresenter 
+                loading={isLoading}
+                lecData={bbsLecture}
+                error={error}
+
+            />
         );
     };
 };

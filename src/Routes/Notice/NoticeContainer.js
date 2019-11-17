@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import NoticePresenter from './NoticePresenter';
+
 
 class Notice extends Component {
     state = {
         isLoading: true,
-        bbsNotice: []
+        bbsNotice: null,
+        error: null
     };
 
     componentDidMount() {
@@ -15,11 +18,15 @@ class Notice extends Component {
     }
      
     render(){
-        const {isLoading, bbsNotice} = this.state;
+        const {isLoading, bbsNotice, error} = this.state;
         return(
-            <div>
-                <b1>Notice Complete</b1>
-            </div>
+            <NoticePresenter 
+                noticeData={bbsNotice}
+                loading={isLoading}
+                error={error}
+            />
+
+
         );
     };
 };
